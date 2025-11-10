@@ -1,7 +1,7 @@
 
 
 
-## Django blog project, deployed on Heroku 
+## Django Vehicle database listings project, deployed on Heroku 
 
 
 ## Create Workspace in IDE 
