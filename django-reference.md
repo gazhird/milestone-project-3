@@ -1,0 +1,250 @@
+
+
+## Create Workspace in IDE 
+
+create folder on windows home screen and open in VS code
+create a blank README.md
+Use Source Control to link to github (icon on left)
+
+
+
+## Create Environment    
+
+Open settings (gear cog Bottom left of VS code)
+click 'Command Palette'
+
+click python create enviroment (top center)
+Click Venu 
+Click Python 
+
+
+## install Packages 
+
+pip3 install Django~=4.2.1
+
+<!-- Isolates extensions from github  -->
+pip3 freeze --local > requirements.txt
+
+
+## Creating a Django Project
+
+django-admin startproject my_project .
+
+
+<!-- Check server works -->
+py manage.py runserver
+
+
+## Git ignore 
+
+<!-- Create file called .gitignore and add .venv to it. -->
+.venv/
+
+
+## Creating a Django App 
+
+py manage.py startapp hello_world
+
+
+
+## app/views.py
+
+from django.http import HttpResponse
+
+def hello_world(request):
+    return HttpResponse("hello, test!")
+
+
+## project/urls.py 
+
+<!-- the def name 'hello_world' from app/views.py   -->
+from hello_world import views as index_views
+
+path('', index_views.index, name='index'),
+
+
+## project/settings.py
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
+
+<!-- add app name to list -->
+INSTALLED_APPS = [ 'new_app_name', ]
+
+
+## Testing app 
+<!-- Check server works -->
+
+py manage.py runserver
+
+
+
+--------------------------------------------------------------
+
+## create database from PostgreSQL 
+
+https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101N+6/courseware/713441aba05441dfb3a7cf04f3268b3f/0758f42698bf498382b68a9cb8e72483/?child=first
+
+
+## env.py
+
+create new file called env.py
+add env.py to .gitignore 
+
+<!-- within env.py import pythons os and set value as 'your db link' -->
+
+import os
+
+os.environ.setdefault(
+    "DATABASE_URL", "<your-database-URL>")
+
+
+## pip install packages for PostgreSQL
+
+pip3 install dj-database-url~=0.5 psycopg2~=2.9
+
+<!-- freeze for requirements  -->
+pip3 freeze --local > requirements.txt
+
+<!-- psycopg2 is a driver for interacting with PostgreSQL databases using Python. The dj-database-url Python package is a utility to connect Django to a database using a URL. -->
+
+## project/settings.py 
+
+<!-- connect the settings.py file to the env.py file: -->
+
+from pathlib import Path
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
+
+ <!-- comment out the local sqlite3 database connection. -->
+
+<!-- DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+} -->
+
+<!-- add following,  no pasting the db here url required -->
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+
+## Migrate 
+
+<!-- Now that your project is connected to the database, you can create database tables with Django's migrate command: -->
+
+py manage.py migrate
+
+
+------------------------------------------------------------------------
+
+
+## Migrate removal reset
+
+<!-- When you change data type of a input  -->
+
+py manage.py migrate blog zero
+
+
+------------------------------------------------------------------------
+
+
+
+## Super User 
+
+py manage.py createsuperuser
+
+<!-- Choose a memorable user name, use your email address and choose a secure password. -->
+
+
+
+
+
+
+
+
+## Create the model code
+
+<!-- Open your app/models.py file. Add a new import at the top for the User model. -->
+<!-- then add table fields below -->
+
+from django.contrib.auth.models import User
+
+
+STATUS = ((0, "Draft"), (1, "Published"))
+
+class Post(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts")
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+
+## Use the model to update the database
+
+py manage.py makemigrations blog
+
+<!-- Note: A app/migrations/0001_initial.py file is created containing the instructions on what table to build. -->
+
+<!-- Now we need to create that table in the database. -->
+
+py manage.py migrate blog
+
+<!-- Open the blog/admin.py file, import the Post model and register it -->
+
+from .models import Post
+
+admin.site.register(Post)
+
+<!-- Open the codestar/settings.py file and add the following code. -->
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
+
+# make folders in a folder 
+
+<!-- makes a folder called templates with a folder called blog in a existing folder called blog  -->
+
+mkdir -p blog/templates/blog
+
+# Summernote package 
+
+pip3 install django-summernote~=0.8.20.0
+
+## load json data to db from a file named posts
+
+<!-- by default, e.g. blog/fixtures/posts.json -->
+
+py manage.py loaddata posts
+
+## check python version 
+
+py -V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+git add --all
+git commit -m "enable serving of static files"
+git push origin main
