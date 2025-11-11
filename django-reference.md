@@ -160,12 +160,48 @@ py manage.py createsuperuser
 
 <!-- Choose a memorable user name, use your email address and choose a secure password. -->
 
+---------------------------------------------
+
+# Secret Key 
+
+<!-- make up your own secret key password -->
+
+# env.py 
+
+import os
+
+os.environ.setdefault(
+    "DATABASE_URL", "<your-database-URL>")
+os.environ.setdefault("SECRET_KEY", "<your_choice_of_secret_key>")
+
+# settings.py
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+# heroku 
+
+key: SECRET_KEY
+
+VALUE: (the made up password from env)
+
+
+-----------------------------------------------------------
+
+## Heroku 
+
+key: DISABLE_COLLECTSTATIC
+
+value: 1
+
+------
+
+key: DATABASE_URL
+
+value: "link from PostgreSQL"
 
 
 
-
-
-
+-----------------------------------------------------------
 
 ## Create the model code
 
