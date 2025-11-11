@@ -205,6 +205,8 @@ value: "link from PostgreSQL"
 
 ## Create the model code
 
+https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101N+6/courseware/713441aba05441dfb3a7cf04f3268b3f/0758f42698bf498382b68a9cb8e72483/?child=first
+
 <!-- Open your app/models.py file. Add a new import at the top for the User model. -->
 <!-- then add table fields below -->
 
@@ -222,6 +224,76 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
+
+
+## adding images in models with Cloudinary
+
+
+install these:
+pip3 install cloudinary~=1.36.0 dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15
+
+
+Freeze:
+pip3 freeze --local > requirements.txt
+
+
+sign into cloudinary - gazhird -> C.
+
+copy the Cloudinary API
+
+
+# env.py
+
+os.environ.setdefault(
+    "CLOUDINARY_URL", "cloudinary://<your_api_key>:<your_api_secret>@dffpy8aov")
+
+-----
+
+# project/settings.py 
+
+INSTALLED_APPS = [
+    'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary', ]
+
+# app/models.py
+
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
+
+featured_image = CloudinaryField('image', default='placeholder')
+
+
+#  app/admin.py
+
+from .models import model-name
+
+admin.site.register(model-name)
+
+
+# project/settings.py
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
+
+
+
+----------------------------------------------------------------------------------
+
+
+blog/templates/blog/index.html file
+
+https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101N+6/courseware/713441aba05441dfb3a7cf04f3268b3f/0b5c6f09dcfd40fa99a9d68622d62b40/
+
+
+-----------------------------------------------------------------------------------
 ## Use the model to update the database
 
 py manage.py makemigrations blog
