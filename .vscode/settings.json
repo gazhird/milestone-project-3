@@ -1,0 +1,6 @@
+{
+    "flake8.args": [
+        "\"python.linting.flake8Args\": [\"--max-line-length=200\", \"--ignore=E501\"]",
+        "\"flake8.args\": [\"--disable=C0111\", \"--max-line-length=220\"]"
+    ]
+}
