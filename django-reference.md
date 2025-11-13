@@ -356,3 +356,20 @@ py -V
 git add --all
 git commit -m "enable serving of static files"
 git push origin main
+
+
+
+
+
+
+
+## powershell / heroku migrations 
+
+press windows + x 
+
+use cd to move to project folder
+
+cd C:\Users\GazHi\OneDrive\Desktop\wheels
+
+heroku login
+
