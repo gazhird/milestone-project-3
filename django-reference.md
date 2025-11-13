@@ -379,3 +379,8 @@ git commit -m "update migrations"
 
 git push heroku main 
 
+## fake zero and reapply (relation errors)
+
+py manage.py migrate listings zero
+py manage.py migrate listings
+
