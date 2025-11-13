@@ -373,3 +373,9 @@ cd C:\Users\GazHi\OneDrive\Desktop\wheels
 
 heroku login
 
+git add .
+
+git commit -m "update migrations"
+
+git push heroku main 
+
