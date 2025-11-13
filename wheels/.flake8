@@ -1,6 +1,0 @@
-
-#remove the red squiggles error (line too long)
-
-[flake8]
-max-line-length = 88
-extend-ignore = E501
