@@ -30,7 +30,7 @@ class Listing(models.Model):
     status = models.CharField(max_length=50, default='Available', editable=False)
 
     def save(self, *args, **kwargs):
-        # save to create a id 
+        # save to create a id, so can use for slug
         if self.pk is None:
             super().save(*args, **kwargs)
         # build slug with unique url make+model+id only once
@@ -57,3 +57,9 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"Comment On Listing {self.listing} by {self.author}"

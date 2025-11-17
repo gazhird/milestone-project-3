@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Listing
 
 
-
-def test(request):
-    return HttpResponse("hello, test!")
-
-
-
-
-# 
+# Create your views here.
+class ListingList(generic.ListView):
+    model = Listing
+    context_object_name = 'listings'
+    template_name = 'listings/listing_list.html'
+    

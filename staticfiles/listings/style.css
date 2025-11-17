@@ -1,0 +1,25 @@
+
+
+
+
+
+.header-bar {
+    background-color:  lightslategray;
+}
+
+h3 {
+    color: red;
+}
+
+.scroll-row {
+    overflow-x:auto;
+    white-space:nowrap;
+}
+.scroll-row .col-lg-3 {
+    display:inline-block;
+    float:none;
+}
+
+.card {
+    white-space:normal;
+}
