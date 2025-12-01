@@ -1,42 +1,86 @@
 
 
-
-
-
-.header-bar {
-    /* background-color:  red; */
-    background-color:  lightslategray;
-    height: auto;
-
+.jcc {
+    display: flex;
+    justify-content: center;
 }
 
+.right {text-align: right;}
+.nop {padding: 0px;}
+
+
 h1 {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 700;
-    color: lightslategray;
+    color: white;
+    margin-bottom: 10px;
 }
 
 h3 {
     padding-left: 4px;
     color: white;
-    font-size: 22px;
+    font-size: 26px;
 }
 
 
-img .card-top {
+.search-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height:  70px;
+    background-color: #141461;
+    border-bottom: 8px solid lightslategray;
+}
+
+.search-side {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.search-row input {
+
+    margin-left: 45%;
+    width: 180px;
+}
+
+
+.header-bar {
+    /* background-color:  red; */
+    background-color:  lightslategray;
+    border-bottom: 8px solid #141461;
+    height: auto;
+
+}
+
+.card-top img {
     min-height: 200px;
     max-height: 200px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .scroll-row {
-    overflow-x:auto;
-    white-space:nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 .scroll-row .col-lg-3 {
-    display:inline-block;
-    float:none;
+    display: inline-block;
+    float: none;
+}
+
+.card-row {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .card {
-    white-space:normal;
+    white-space: normal;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #303088;
 }
