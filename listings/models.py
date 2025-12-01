@@ -32,6 +32,8 @@ class Listing(models.Model):
     def save(self, *args, **kwargs):
         # save to create a id, so can use for slug
         if self.pk is None:
+            self.make = self.make.strip().title()
+            self.model = self.model.strip().title()
             super().save(*args, **kwargs)
         # build slug with unique url make+model+id only once
         if not self.slug:

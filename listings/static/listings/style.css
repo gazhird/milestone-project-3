@@ -4,11 +4,28 @@
 
 
 .header-bar {
+    /* background-color:  red; */
     background-color:  lightslategray;
+    height: auto;
+
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: lightslategray;
 }
 
 h3 {
-    color: red;
+    padding-left: 4px;
+    color: white;
+    font-size: 22px;
+}
+
+
+img .card-top {
+    min-height: 200px;
+    max-height: 200px;
 }
 
 .scroll-row {

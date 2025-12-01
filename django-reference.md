@@ -323,6 +323,17 @@ CSRF_TRUSTED_ORIGINS = [
 
 mkdir -p blog/templates/blog
 
+# CSS 
+
+## Hard Refresh 
+
+<!-- good for single edits -->
+Ctrl + Shift + R
+
+
+
+
+
 # Summernote package 
 
 pip3 install django-summernote~=0.8.20.0
@@ -331,7 +342,8 @@ pip3 install django-summernote~=0.8.20.0
 
 <!-- by default, e.g. blog/fixtures/posts.json -->
 
-py manage.py loaddata posts
+py manage.py load data posts
+
 
 ## check python version 
 
@@ -339,27 +351,13 @@ py -V
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+## git 
 
 
 
 git add --all
 git commit -m "enable serving of static files"
 git push origin main
-
-
-
-
 
 
 
@@ -387,23 +385,6 @@ py manage.py migrate listings
 
 
 
-<!-- asgiref==3.10.0
-certifi==2025.10.5
-charset-normalizer==3.4.4
-cloudinary==1.36.0
-dj-database-url==0.5.0
-dj3-cloudinary-storage==0.0.6
-Django==4.2.26
-django-cloudinary-storage==0.3.0
-gunicorn==20.1.0
-idna==3.11
-psycopg2==2.9.11
-requests==2.32.5
-setuptools==80.9.0
-six==1.17.0
-sqlparse==0.5.3
-tzdata==2025.2
-urllib3==1.26.20 -->
 
 
 
