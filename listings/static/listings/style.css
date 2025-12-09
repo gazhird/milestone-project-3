@@ -1,12 +1,5 @@
 
 
-.jcc {
-    display: flex;
-    justify-content: center;
-}
-
-.right {text-align: right;}
-.nop {padding: 0px;}
 
 
 h1 {
@@ -23,22 +16,42 @@ h3 {
 }
 
 
+
+
+.vehicle-scroll-box {
+  max-width: 100%;          /* or any fixed value you need */
+  overflow-x: auto;         /* horizontal scrolling */
+  white-space: nowrap;      /* keep cards in one line */
+  padding-bottom: 8px;      /* optional – keeps scrollbar off cards */
+}
+
+.vehicle-scroll-box .row {
+  flex-wrap: nowrap;        /* Bootstrap row defaults to wrap */
+}
+
+.vehicle-scroll-box .col-lg-3 {
+  display: inline-block;    /* optional extra insurance */
+  float: none;
+  width: 280px;             /* fixed card width – tweak to taste */
+}
+
+
 .search-row {
     padding-top: 10px;
     padding-bottom: 10px;
     height:  70px;
     background-color: #141461;
     border-bottom: 8px solid lightslategray;
-}
+} 
 
 .search-side {
     margin-top: 5px;
     margin-bottom: 5px;
-}
+} 
 
 .search-row input {
 
-    margin-left: 45%;
+    margin-left: 25%;
     width: 180px;
 }
 
@@ -49,30 +62,6 @@ h3 {
     border-bottom: 8px solid #141461;
     height: auto;
 
-}
-
-.card-top img {
-    min-height: 200px;
-    max-height: 200px;
-    width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.scroll-row {
-    overflow-x: auto;
-    white-space: nowrap;
-}
-.scroll-row .col-lg-3 {
-    display: inline-block;
-    float: none;
-}
-
-.card-row {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .card {

@@ -2,24 +2,65 @@
 
 
 
-
-.header-bar {
-    background-color:  lightslategray;
+h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
 }
 
 h3 {
-    color: red;
+    padding-left: 4px;
+    color: white;
+    font-size: 26px;
 }
 
-.scroll-row {
-    overflow-x:auto;
-    white-space:nowrap;
+
+.serched-results {
+    height: 400px;
+    background-color: #303088;
 }
-.scroll-row .col-lg-3 {
-    display:inline-block;
-    float:none;
+
+.vehicle-scroll-box {
+  max-height: 520px;   /* two rows of ~260 px each – tweak to taste */
+  overflow-y: auto;
+  padding-right: 8px;  /* keeps the scrollbar from sitting on the cards */
+}
+
+ .search-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height:  70px;
+    background-color: #141461;
+    border-bottom: 8px solid lightslategray;
+} 
+
+.search-side {
+    margin-top: 5px;
+    margin-bottom: 5px;
+} 
+
+.search-row input {
+
+    margin-left: 25%;
+    width: 180px;
+}
+
+
+.header-bar {
+    /* background-color:  red; */
+    background-color:  lightslategray;
+    border-bottom: 8px solid #141461;
+    height: auto;
+
 }
 
 .card {
-    white-space:normal;
+    white-space: normal;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #303088;
 }

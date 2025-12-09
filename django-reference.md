@@ -386,7 +386,10 @@ py manage.py migrate listings
 
 
 
+## short cuts
 
+
+Ctrl + B
 
 
 
