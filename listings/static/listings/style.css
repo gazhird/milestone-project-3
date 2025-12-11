@@ -2,6 +2,17 @@
 
 
 
+/* All Sections  */
+
+.inline {display:flex;}
+.ruby  {display: ruby;}
+.jcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 h1 {
     font-size: 38px;
     font-weight: 700;
@@ -18,43 +29,33 @@ h3 {
 
 
 
-.vehicle-scroll-box {
-  max-width: 100%;          /* or any fixed value you need */
-  overflow-x: auto;         /* horizontal scrolling */
-  white-space: nowrap;      /* keep cards in one line */
-  padding-bottom: 8px;      /* optional – keeps scrollbar off cards */
+
+
+
+/* Hero / Listing / search bar  */
+
+
+#hero {
+    border-top: 12px solid lightslategray;
+    margin-top: 228px;
+    height: 300px;
+    background-color: #303088;
+    border-bottom: 12px solid lightslategray;
+
+
 }
 
-.vehicle-scroll-box .row {
-  flex-wrap: nowrap;        /* Bootstrap row defaults to wrap */
+#hero .search-bar {
+    padding-top: 60px;
 }
 
-.vehicle-scroll-box .col-lg-3 {
-  display: inline-block;    /* optional extra insurance */
-  float: none;
-  width: 280px;             /* fixed card width – tweak to taste */
+.btn-primary {
+    background-color: #303088;
 }
 
 
-.search-row {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height:  70px;
-    background-color: #141461;
-    border-bottom: 8px solid lightslategray;
-} 
 
-.search-side {
-    margin-top: 5px;
-    margin-bottom: 5px;
-} 
-
-.search-row input {
-
-    margin-left: 25%;
-    width: 180px;
-}
-
+/* Display vehicles  */
 
 .header-bar {
     /* background-color:  red; */
@@ -70,6 +71,26 @@ h3 {
     margin-bottom: 10px;
 }
 
-.btn-primary {
-    background-color: #303088;
+.card-img-top {
+    min-height: 190px;
+    max-height: 190px;
 }
+
+
+.vehicle-scroll-box {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+}
+
+.vehicle-scroll-box .row {
+    flex-wrap: nowrap;       
+}
+
+.vehicle-scroll-box .col-lg-3 {
+    display: inline-block;    
+    float: none;
+    width: 280px;             
+}
+

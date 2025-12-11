@@ -5,10 +5,12 @@ from cloudinary.models import CloudinaryField
 import datetime
 
 
+# adds select choices on form
 FUEL_SELECT = [
     ('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('Electric', 'Electric'), 
     ('Hybrid', 'Hybrid'),]
 
+# adds select choices on form and current year
 YEAR_SELECT = [
     (year, year) for year in range(1980, datetime.date.today().year + 1)]
 
@@ -30,7 +32,7 @@ class Listing(models.Model):
     status = models.CharField(max_length=50, default='Available', editable=False)
 
     def save(self, *args, **kwargs):
-        # save to create a id, so can use for slug
+        # save to create a id, so can use id for slug
         if self.pk is None:
             self.make = self.make.strip().title()
             self.model = self.model.strip().title()

@@ -14,4 +14,3 @@ class ListingList(generic.ListView):
         if make:
             queryset = queryset.filter(make__icontains=make)
         return queryset
-
