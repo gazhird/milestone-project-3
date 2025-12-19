@@ -1,0 +1,31 @@
+
+
+
+<!-- all_listings -->
+{% regroup all_listings by make as make_list %}
+<div id="groupedView">
+  {% for make in make_list %}
+    <div class="header-bar"><h3 class="mt-4">{{ make.grouper }}</h3></div>
+    <div class="vehicle-scroll-box mb-4">
+      <div class="row g-3">
+        {% for listing in make.list %}
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <!-- Image Cards -->
+            <div class="card h-100 shadow-sm">
+                <img src="{{ listing.image1.url }}" class="card-img-top" alt="{{ listing.model }}">
+                <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ listing.make }} {{ listing.model }}</h5>
+                <p class="card-text">
+                    {{ listing.year }} – {{ listing.fuel }} – {{ listing.size }}<br>
+                    <strong>£{{ listing.price }}</strong>
+                </p>
+                <a href="{% url 'home' %}{{ listing.slug }}" class="btn btn-primary btn-sm mt-auto">View</a>
+            </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
